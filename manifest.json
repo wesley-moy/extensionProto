@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Adding a button",
+  "description": "This extension creates a button on the existing page that throws an alert",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/webhp?hl=en"],
+      "css": ["./src/inject.css"],
+      "js": ["./src/inject.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "./icons/icon.png",
+    "default_popup": "./icons/popup.html",
+    "default_title": "Add Button"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
